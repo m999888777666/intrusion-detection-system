@@ -11,7 +11,7 @@ class SYNFloodDetector:
                 src_ip=packet[IP].src
                 syn_count=self.stats_manager.record_syn(src_ip)
                 if syn_count > config.SYN_FLOOD_THRESHOLD:
-                    alert1=Alert=(       
+                    alert1=Alert(       
                         src_ip=packet[IP].src,
                         alert_type="SYN_FLOOD",
                         severity="HIGH",
